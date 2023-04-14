@@ -1,0 +1,7 @@
+[
+    {
+        "email": "body > main > section > div > form > label:nth-child(1)",
+        "password": "body > main > section > div > form > label:nth-child(2)",
+        "loginButton": ".login__button"
+    }
+]
