@@ -1,13 +1,34 @@
 {
   "name": "cypress2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress run cloud": "cypress run --record --key 7056dc34-50c3-4e7c-97a0-f6f96159ae6e"
+    "test:admin:chrome": "npx cypress run --group admin --browser chrome --spec \"cypress/e2e/admin.cy.js\" --record",
+    "test:admin:firefox": "npx cypress run --group admin --browser firefox --spec \"cypress/e2e/admin.cy.js\" --record",
+    "test:admin:electron": "npx cypress run --group admin --browser electron --spec \"cypress/e2e/admin.cy.js\" --record",
+    
+    "test:ticket:chrome": "npx cypress run --group ticket --browser chrome --spec \"cypress/e2e/mainpage.cy.js\",\"cypress/e2e/bookTicket.cy.js\" --record",
+    "test:ticket:firefox": "npx cypress run --group ticket --browser firefox --spec \"cypress/e2e/mainpage.cy.js\",\"cypress/e2e/bookTicket.cy.js\" --record",
+    "test:ticket:electron": "npx cypress run --group ticket --browser electron --spec \"cypress/e2e/mainpage.cy.js\",\"cypress/e2e/bookTicket.cy.js\" --record",
+    
+    "test:parallel:one": "npm run test:admin:chrome & npm run test:ticket:electron",
+    "test:parallel:two": "npm run test:admin:electron & npm run test:ticket:chrome",
+
+    "cypress run cloud": "cypress run --record"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diananaum/movieTickets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diananaum/movieTickets/issues"
+  },
+  "homepage": "https://github.com/diananaum/movieTickets#readme",
+  "description": "",
+  "dependencies": {
+    "cypress": "^12.10.0"
+  }
 }
