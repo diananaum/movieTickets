@@ -40,4 +40,3 @@ selector.forEach(selector => {
         cy.get(selector.loginButton).click();
       });
 });
-
